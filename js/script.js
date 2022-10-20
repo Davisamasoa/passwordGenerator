@@ -1,6 +1,7 @@
 const btn = document.querySelector("button");
 const input = document.querySelector(".password");
-const checkLetra = document.querySelector("#letra");
+const checkLetraMi = document.querySelector("#letraMi");
+const checkLetraMa = document.querySelector("#letraMa");
 const checkNum = document.querySelector("#numero");
 const checkCespeciais = document.querySelector("#cEspeciais");
 
@@ -47,17 +48,33 @@ btn.addEventListener("click", () => {
 			let randomLyricIndex = random(array.length - 1);
 			result += array[randomLyricIndex];
 		}
+
+		if (checkLetraMa.checked) {
+			if (checkLetraMi.checked) {
+				result = result.replace(
+					result[random(limite)],
+					result[random(limite)].toUpperCase()
+				);
+			} else if (limite > 5) {
+				result = result.replace(
+					result[random(limite)],
+					lyrics[random(lyrics.length)].toUpperCase()
+				);
+			}
+		}
+
+		console.log(result);
 		return result;
 	};
 
-	if (checkLetra.checked && checkNum.checked && checkCespeciais.checked) {
+	if (checkLetraMi.checked && checkNum.checked && checkCespeciais.checked) {
 		password +=
 			createPassword(1, symbols) + random(10) + createPassword(8, lyrics);
-	} else if (checkLetra.checked && checkNum.checked) {
+	} else if (checkLetraMi.checked && checkNum.checked) {
 		password += random(10) + createPassword(9, lyrics);
-	} else if (checkLetra.checked && checkCespeciais.checked) {
+	} else if (checkLetraMi.checked && checkCespeciais.checked) {
 		password += createPassword(1, symbols) + createPassword(9, lyrics);
-	} else if (checkLetra.checked) {
+	} else if (checkLetraMi.checked) {
 		password += createPassword(10, lyrics);
 	} else if (checkNum.checked && checkCespeciais.checked) {
 		password += createPassword(3, symbols) + createPassword(7, nums);
@@ -65,6 +82,8 @@ btn.addEventListener("click", () => {
 		password += createPassword(10, nums);
 	} else if (checkCespeciais.checked) {
 		password += createPassword(10, symbols);
+	} else if (checkLetraMa.checked) {
+		password += createPassword(10, lyrics).toUpperCase();
 	} else {
 		alert("Marque uma opção para gerar uma senha!");
 	}
