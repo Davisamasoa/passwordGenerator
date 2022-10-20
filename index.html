@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="./styles/style.css" />
+		<link rel="stylesheet" href="./styles/background.css" />
+		<script defer src="./js/script.js"></script>
+	</head>
+	<body>
+		<main>
+			<div class="input-group mb-3 div-input">
+				<span class="input-group-text" id="inputGroup-sizing-default"
+					>Sua Senha</span
+				>
+				<input
+					type="text"
+					class="form-control password"
+					aria-label="Sizing example input"
+					aria-describedby="inputGroup-sizing-default"
+					placeholder="Senha de 10 dígitos"
+				/>
+			</div>
+			<div class="div-check">
+				<div class="form-check">
+					<input
+						class="form-check-input"
+						type="checkbox"
+						value=""
+						id="letra"
+						checked
+					/>
+					<label class="form-check-label" for="letra"> Letra </label>
+				</div>
+				<div class="form-check">
+					<input
+						class="form-check-input"
+						type="checkbox"
+						value=""
+						id="numero"
+					/>
+					<label class="form-check-label" for="numero"> Número </label>
+				</div>
+
+				<div class="form-check">
+					<input
+						class="form-check-input"
+						type="checkbox"
+						value=""
+						id="cEspeciais"
+					/>
+					<label class="form-check-label" for="cEspeciais">
+						Caracteres especiais
+					</label>
+				</div>
+			</div>
+		</main>
+
+		<button type="button" class="btn btn-outline-light mt-5">
+			Gerar senha
+		</button>
+		<div class="area">
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+</html>
